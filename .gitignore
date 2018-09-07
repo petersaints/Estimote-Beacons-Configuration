@@ -1,3 +1,6 @@
+# gradle.properties may contain API keys. If you need to place anything else there you should remove the followling line and find an alternative way of storing API keys.
+gradle.properties
+
 # Built application files
 *.apk
 *.ap_
