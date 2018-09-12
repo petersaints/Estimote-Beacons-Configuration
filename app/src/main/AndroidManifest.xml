@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.estimote.configuration">
+    package="net.albuquerques.estimote.config">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name="com.estimote.configuration.ConfigurationApplication"
+        android:name="net.albuquerques.estimote.config.ConfigurationApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.estimote.configuration.MainActivity">
+        <activity android:name="net.albuquerques.estimote.config.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.estimote.configuration.ConfigureBeaconActivity" />
-        <activity android:name="com.estimote.configuration.ConfigurationActivity" />
+        <activity android:name="net.albuquerques.estimote.config.ExampleBeaconConfigurationActivity" />
+        <activity android:name="net.albuquerques.estimote.config.BeaconConfigurationActivity" />
     </application>
 
 </manifest>

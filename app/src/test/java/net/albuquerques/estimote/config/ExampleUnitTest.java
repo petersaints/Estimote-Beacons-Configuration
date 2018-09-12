@@ -1,4 +1,4 @@
-package com.estimote.configuration;
+package net.albuquerques.estimote.config;
 
 import org.junit.Test;
 

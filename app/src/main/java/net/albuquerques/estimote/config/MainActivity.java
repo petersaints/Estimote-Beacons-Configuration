@@ -1,4 +1,4 @@
-package com.estimote.configuration;
+package net.albuquerques.estimote.config;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

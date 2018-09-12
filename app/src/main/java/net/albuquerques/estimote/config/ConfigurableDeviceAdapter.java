@@ -1,4 +1,4 @@
-package com.estimote.configuration;
+package net.albuquerques.estimote.config;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -74,8 +74,8 @@ public class ConfigurableDeviceAdapter extends RecyclerView.Adapter<Configurable
                          +"UUID: "+ibeacon.getProximityUUID()+"\n"
                          +"Major: "+ibeacon.getMajor()+"\n"
                          +"Minor: "+ibeacon.getMinor()+"\n"
-                         +"Measured Power: "+ibeacon.getMeasuredPower()+"\n"
-                         +"RSSI: "+ibeacon.getRssi();
+                         +"Measured Power: "+ibeacon.getMeasuredPower();/* +"\n" */
+                         /* +"RSSI: "+ibeacon.getRssi(); */
         }
         if(eddystones.containsKey(device.macAddress.toString())) {
             Eddystone eddystone = eddystones.get(device.macAddress.toString());
@@ -92,17 +92,17 @@ public class ConfigurableDeviceAdapter extends RecyclerView.Adapter<Configurable
                 beaconInfo += "\n"
                             + "EID: "+eddystone.eid+"\n";
             }
-            beaconInfo += "\n"
-                        + "RSSI: "+eddystone.rssi;
+            /* beaconInfo += "\n"
+                        + "RSSI: "+eddystone.rssi; */
         }
         holder.textView.setText(beaconInfo);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Clicked On: "+device.toString());
-                    Intent intent = new Intent(v.getContext(), ConfigurationActivity.class);
-                    intent.putExtra(EXTRA_SCAN_RESULT_ITEM_DEVICE, device);
-                    v.getContext().startActivity(intent);
+            Log.d(TAG, "Clicked On: "+device.toString());
+            Intent intent = new Intent(v.getContext(), BeaconConfigurationActivity.class);
+            intent.putExtra(EXTRA_SCAN_RESULT_ITEM_DEVICE, device);
+            v.getContext().startActivity(intent);
                 }
         });
     }

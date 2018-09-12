@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">Estimote Configuration</string>
+    <string name="uuid">UUID</string>
+    <string name="major">Major</string>
+    <string name="minor">Minor</string>
+    <string name="device_connected">Connected to Device</string>
+    <string name="device_disconnected">Device Disconnected</string>
+    <string name="save">Save</string>
+    <string name="sync">Sync Settings</string>
+    <string name="syncing">Syncing Settings</string>
+    <string name="sync_successful">Successfully Synced Settings</string>
+    <string name="update_firmware">Update Firmware</string>
+    <string name="not_connected">Not connected to a device.</string>
+    <string name="not_implemented">This feature has yet to be implemented.</string>
+
+    <!-- TODO: Remove the code that depends of the following strings -->
     <string name="searching">Searching</string>
     <string name="alert_ok">Ok</string>
     <string name="detected_devices">Detected devices</string>

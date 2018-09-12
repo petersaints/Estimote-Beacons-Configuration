@@ -1,4 +1,4 @@
-package com.estimote.configuration;
+package net.albuquerques.estimote.config;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
@@ -34,7 +34,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.UUID;
 
-public class ConfigureBeaconActivity extends AppCompatActivity {
+public class ExampleBeaconConfigurationActivity extends AppCompatActivity {
     public static final String TAG = "EST_CONF_CONFGR_ACT";
     public static final String EXTRA_SCAN_RESULT_ITEM_DEVICE = "com.estimote.net.albuquerques.beacons.estimote.configuration.SCAN_RESULT_ITEM_DEVICE";
 
@@ -90,10 +90,10 @@ public class ConfigureBeaconActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_configure_beacon);
+        setContentView(R.layout.activity_example_beacon_configuration);
 
         Intent intent = getIntent();
-        configurableDevice = (ConfigurableDevice) intent.getParcelableExtra(ConfigureBeaconActivity.EXTRA_SCAN_RESULT_ITEM_DEVICE);
+        configurableDevice = (ConfigurableDevice) intent.getParcelableExtra(ExampleBeaconConfigurationActivity.EXTRA_SCAN_RESULT_ITEM_DEVICE);
 
         beaconIdTextView = (TextView) findViewById(R.id.beacon_id_textView);
         beaconIdTextView.setText(configurableDevice.deviceId.toString());
