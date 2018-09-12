@@ -35,7 +35,9 @@ import java.util.HashSet;
 import java.util.UUID;
 
 public class ConfigureBeaconActivity extends AppCompatActivity {
-    public static final String TAG = "ESTIMOTE_CONFIG_BEACON";
+    public static final String TAG = "EST_CONF_CONFGR_ACT";
+    public static final String EXTRA_SCAN_RESULT_ITEM_DEVICE = "com.estimote.net.albuquerques.beacons.estimote.configuration.SCAN_RESULT_ITEM_DEVICE";
+
 
     private ConfigurableDevice configurableDevice;
     private DeviceConnection connection;
@@ -91,7 +93,7 @@ public class ConfigureBeaconActivity extends AppCompatActivity {
         setContentView(R.layout.activity_configure_beacon);
 
         Intent intent = getIntent();
-        configurableDevice = (ConfigurableDevice) intent.getParcelableExtra(MainActivity.EXTRA_SCAN_RESULT_ITEM_DEVICE);
+        configurableDevice = (ConfigurableDevice) intent.getParcelableExtra(ConfigureBeaconActivity.EXTRA_SCAN_RESULT_ITEM_DEVICE);
 
         beaconIdTextView = (TextView) findViewById(R.id.beacon_id_textView);
         beaconIdTextView.setText(configurableDevice.deviceId.toString());
@@ -284,6 +286,7 @@ public class ConfigureBeaconActivity extends AppCompatActivity {
         edit.set(connection.settings.beacon.proximityUUID(), UUID.fromString("113069EC-6E64-4BD3-6810-DE01B36E8A3E")); // You might want all your beacons to have a certain UUID.
         edit.set(connection.settings.beacon.major(), tagsMajorsMapping.get((String) tagsSpinner.getSelectedItem()));
         edit.set(connection.settings.beacon.transmitPower(), placementPowerMapping.get((String) placementSpinner.getSelectedItem()).powerInDbm);
+        edit.set(connection.settings.beacon.advertisingInterval(), 100);
         if (currentLocation != null) {
             edit.set(connection.settings.deviceInfo.geoLocation(), currentLocation);
         }

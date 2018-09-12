@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Configuration</string>
+    <string name="app_name">Estimote Configuration</string>
     <string name="searching">Searching</string>
     <string name="alert_ok">Ok</string>
     <string name="detected_devices">Detected devices</string>
